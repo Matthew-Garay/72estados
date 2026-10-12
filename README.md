@@ -1,39 +1,39 @@
 <div align="center">
 
-# 🗺️ Laberinto de 72 Estados
+# Laberinto de 72 Estados
 
 **Práctica de Inteligencia Artificial en Prolog** — búsqueda en profundidad (DFS) sobre un grafo de 72 nodos.
 
-[![SWI-Prolog](https://img.shields.io/badge/SWI--Prolog-8.x-007ACC?style=flat-square&logo=prolog&logoColor=white)](https://www.swi-prolog.org/)
+[![SWI-Prolog](https://img.shields.io/badge/SWI--Prolog-8.x-007ACC?style=flat-square)](https://www.swi-prolog.org/)
 [![IA](https://img.shields.io/badge/Inteligencia%20Artificial-B%C3%BAsqueda%20en%20Profundidad-6f42c1?style=flat-square)]()
 
 </div>
 
 ---
 
-## 📖 Descripción
+## Descripción
 
 Implementación clásica de **búsqueda en profundidad (DFS)** sobre un grafo de **72 nodos** representado como lista de adyacencia. Dados un nodo inicial y uno final, el programa devuelve la secuencia de nodos que forman el camino entre ambos, **evitando ciclos**.
 
 Es una práctica académica de la asignatura de Inteligencia Artificial: ilustra la representación de grafos, el recorrido con backtracking y la escritura manual de predicados auxiliares en Prolog.
 
-## ✨ Características
+## Características
 
 - Grafo de 72 nodos modelado como **lista de adyacencia**.
 - **Búsqueda en profundidad (DFS)** con detección de ciclos para no repetir nodos.
 - Predicados auxiliares escritos a mano (`invertir/2`, `concatenar/3`, `miembro/2`), como pide la práctica.
 - Sin librerías externas: aprovecha el backtracking nativo de Prolog.
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Lenguaje:** Prolog
 - **Intérprete:** SWI-Prolog 8.x
 
-## 📋 Requisitos previos
+## Requisitos previos
 
 - [SWI-Prolog](https://www.swi-prolog.org/) instalado y accesible desde la terminal.
 
-## 🚀 Instalación
+## Instalación
 
 ```bash
 git clone https://github.com/Matthew-Garay/72estados.git
@@ -41,7 +41,7 @@ cd 72estados
 swipl laberinto72estados.pl
 ```
 
-## 🧪 Uso
+## Uso
 
 Una vez cargado el programa, consulta el camino entre dos nodos con `resolver/3` (inicio, fin, camino):
 
@@ -52,7 +52,7 @@ Una vez cargado el programa, consulta el camino entre dos nodos con `resolver/3`
 
 `sucesor_disp/4` garantiza que no se visiten nodos repetidos y `invertir/2` devuelve el camino en orden correcto.
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 72estados/
@@ -62,10 +62,11 @@ Una vez cargado el programa, consulta el camino entre dos nodos con `resolver/3`
 └── README.md
 ```
 
-## 📜 Licencia
+## Licencia
 
 Proyecto académico y educativo; puedes usarlo libremente con fines de aprendizaje.
 
-## ✍️ Autor
+## Autor
 
 **Matthew Garay** — [GitHub](https://github.com/Matthew-Garay)
+
