@@ -1,72 +1,76 @@
-<div align="center">
+﻿# Laberinto de 72 Estados
 
-# Laberinto de 72 Estados
+<p align="center">
+  <a href="https://github.com/Matthew-Garay/72estados/actions/workflows/ci.yml"><img src="https://github.com/Matthew-Garay/72estados/actions/workflows/ci.yml/badge.svg" alt="CI Status"/></a>
+  <a href="https://github.com/Matthew-Garay/72estados/security/dependabot"><img src="https://img.shields.io/badge/Dependabot-enabled-blue?style=flat-square&logo=github&labelColor=555555" alt="Dependabot"/></a>
+</p>
 
-**Práctica de Inteligencia Artificial en Prolog** — búsqueda en profundidad (DFS) sobre un grafo de 72 nodos.
+Implementacion de busqueda en profundidad (DFS) sobre un grafo de 72 nodos representado como lista de adyacencia en Prolog. Dados un nodo inicial y uno final, el programa devuelve la secuencia de nodos que forman el camino entre ambos, evitando ciclos.
 
-[![SWI-Prolog](https://img.shields.io/badge/SWI--Prolog-8.x-007ACC?style=flat-square)](https://www.swi-prolog.org/)
-[![IA](https://img.shields.io/badge/Inteligencia%20Artificial-B%C3%BAsqueda%20en%20Profundidad-6f42c1?style=flat-square)]()
+## Stack tecnologico
 
-</div>
+- **Lenguaje:** SWI-Prolog
+- **Paradigma:** Programacion logica, busqueda en grafos, backtracking
+- **Entorno:** SWI-Prolog 8.x
 
----
+## Arquitectura
 
-## Descripción
-
-Implementación clásica de **búsqueda en profundidad (DFS)** sobre un grafo de **72 nodos** representado como lista de adyacencia. Dados un nodo inicial y uno final, el programa devuelve la secuencia de nodos que forman el camino entre ambos, **evitando ciclos**.
-
-Es una práctica académica de la asignatura de Inteligencia Artificial: ilustra la representación de grafos, el recorrido con backtracking y la escritura manual de predicados auxiliares en Prolog.
-
-## Características
-
-- Grafo de 72 nodos modelado como **lista de adyacencia**.
-- **Búsqueda en profundidad (DFS)** con detección de ciclos para no repetir nodos.
-- Predicados auxiliares escritos a mano (`invertir/2`, `concatenar/3`, `miembro/2`), como pide la práctica.
-- Sin librerías externas: aprovecha el backtracking nativo de Prolog.
-
-## Tecnologías utilizadas
-
-- **Lenguaje:** Prolog
-- **Intérprete:** SWI-Prolog 8.x
-
-## Requisitos previos
-
-- [SWI-Prolog](https://www.swi-prolog.org/) instalado y accesible desde la terminal.
-
-## Instalación
-
-```bash
-git clone https://github.com/Matthew-Garay/72estados.git
-cd 72estados
-swipl laberinto72estados.pl
+```mermaid
+graph TD
+    A[Grafo de 72 nodos] --> B[Nodo inicial y nodo final]
+    B --> C[Busqueda en profundidad con backtracking]
+    C --> D[Camino entre nodos evitando ciclos]
+    D --> E[Secuencia de nodos del recorrido]
+    
+    style A fill:#e1f5fe,stroke:#01579b
+    style B fill:#fff3e0,stroke:#e65100
+    style C fill:#e8f5e9,stroke:#1b5e20
+    style D fill:#f3e5f5,stroke:#4a148c
+    style E fill:#ffe0b2,stroke:#ef6c00
 ```
 
-## Uso
+## Caracteristicas
 
-Una vez cargado el programa, consulta el camino entre dos nodos con `resolver/3` (inicio, fin, camino):
+- Representacion de grafos como lista de adyacencia
+- Busqueda en profundidad (DFS) con backtracking
+- Evitacion de ciclos en el recorrido
+- Codigo modular y documentado
 
-```prolog
-?- resolver(n1, n72, Camino).
-?- resolver(n3, n38, Camino).
-```
+## Como ejecutar
 
-`sucesor_disp/4` garantiza que no se visiten nodos repetidos y `invertir/2` devuelve el camino en orden correcto.
+### Requisitos previos
+
+- SWI-Prolog 8.x instalado
+
+### Ejecucion
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Matthew-Garay/72estados.git
+   cd 72estados
+   ```
+2. Ejecuta el archivo principal con SWI-Prolog:
+   ```bash
+   swipl -s laberinto72estados.pl -g "main" -t "halt"
+   ```
+3. El programa muestra el camino encontrado entre los nodos especificados.
 
 ## Estructura del proyecto
 
 ```
 72estados/
-├── laberinto72estados.pl              # Programa Prolog (grafo + DFS)
-├── Práctica 14. Laberinto de 72 estados.pdf   # Memoria de la práctica
-├── laberinto IA.pdf
-└── README.md
+├── laberinto72estados.pl    # Codigo fuente en Prolog
+├── .gitignore               # Archivos excluidos del control de versiones
+├── LICENSE                  # Licencia MIT
+├── README.md                # Este archivo
+└── docs/                    # Documentacion extendida
+    ├── setup-guide.md       # Guia de instalacion
+    └── architecture.md      # Diagrama de arquitectura
 ```
 
-## Licencia
+## Contacto
 
-Proyecto académico y educativo; puedes usarlo libremente con fines de aprendizaje.
-
-## Autor
-
-**Matthew Garay** — [GitHub](https://github.com/Matthew-Garay)
-
+<p align="center">
+  <a href="mailto:1911.garay.perez@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+  <a href="https://www.linkedin.com/in/matthewgarayperez/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+</p>
