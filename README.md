@@ -1,76 +1,59 @@
-﻿# Laberinto de 72 Estados
+# Laberinto de 72 Estados
 
-<p align="center">
-  <a href="https://github.com/Matthew-Garay/72estados/actions/workflows/ci.yml"><img src="https://github.com/Matthew-Garay/72estados/actions/workflows/ci.yml/badge.svg" alt="CI Status"/></a>
-  <a href="https://github.com/Matthew-Garay/72estados/security/dependabot"><img src="https://img.shields.io/badge/Dependabot-enabled-blue?style=flat-square&logo=github&labelColor=555555" alt="Dependabot"/></a>
-</p>
+## A. Titulo del Proyecto y Resumen Ejecutivo
 
-Implementacion de busqueda en profundidad (DFS) sobre un grafo de 72 nodos representado como lista de adyacencia en Prolog. Dados un nodo inicial y uno final, el programa devuelve la secuencia de nodos que forman el camino entre ambos, evitando ciclos.
+Laberinto de 72 Estados es una implementacion de busqueda en profundidad (DFS) sobre un grafo de 72 nodos representado como lista de adyacencia, desarrollado en lenguaje Prolog. El sistema resuelve el problema de encontrar un camino entre un nodo inicial y un nodo final dentro de un grafo no dirigido, evitando ciclos mediante el registro de nodos ya visitados. Su alcance tecnologico se limita a la ejecucion local en el entorno SWI-Prolog, sin dependencias de red, base de datos ni componentes externos.
 
-## Stack tecnologico
+## B. Arquitectura del Sistema
 
-- **Lenguaje:** SWI-Prolog
-- **Paradigma:** Programacion logica, busqueda en grafos, backtracking
-- **Entorno:** SWI-Prolog 8.x
+El programa sigue una arquitectura de capas logicas basada en programacion logica. La entrada consiste en un identificador de nodo inicial, un identificador de nodo final y la definicion del grafo como lista de adyacencia. El motor de busqueda aplica el algoritmo de profundidad con backtracking: explora un camino hasta llegar al nodo destino o hasta agotar las opciones, momento en el cual retrocede al ultimo nodo con sucesores no visitados. El flujo de datos va de la definicion del grafo al predicado de busqueda, que devuelve una lista de nodos representando el camino encontrado, y finalmente se imprime la secuencia en consola.
 
-## Arquitectura
+## C. Caracteristicas Tecnicas Clave
 
-```mermaid
-graph TD
-    A[Grafo de 72 nodos] --> B[Nodo inicial y nodo final]
-    B --> C[Busqueda en profundidad con backtracking]
-    C --> D[Camino entre nodos evitando ciclos]
-    D --> E[Secuencia de nodos del recorrido]
-    
-    style A fill:#e1f5fe,stroke:#01579b
-    style B fill:#fff3e0,stroke:#e65100
-    style C fill:#e8f5e9,stroke:#1b5e20
-    style D fill:#f3e5f5,stroke:#4a148c
-    style E fill:#ffe0b2,stroke:#ef6c00
+- Representacion de grafos mediante listas de adyacencia en Prolog.
+- Algoritmo de busqueda en profundidad (DFS) con backtracking para explorar el espacio de estados.
+- Mecanismo de evitacion de ciclos mediante verificacion de membresia en la lista de nodos visitados.
+- Persistencia limitada a la ejecucion en memoria; no se utiliza base de datos ni almacenamiento en disco.
+- Ausencia de mecanismos de concurrencia, procesamiento en tiempo real o red; es un programa de ejecucion secuencial y por lotes.
+- Seguridad limitada al ambito de ejecucion local; no maneja datos sensibles ni autenticacion.
+
+## D. Especificacion del Stack Tecnologico
+
+| Categoria | Tecnologia / Librería |
+|-----------|----------------------|
+| Lenguaje | SWI-Prolog 8.x |
+| Paradigma | Programacion logica, busqueda en grafos, backtracking |
+| Entorno | SWI-Prolog 8.x |
+
+## E. Guia de Instalacion, Configuracion y Despliegue
+
+### Requisitos previos del sistema
+
+- SWI-Prolog 8.x instalado en el sistema operativo.
+- Acceso a terminal o consola de comandos.
+
+### Secuencia de comandos para clonacion e instalacion
+
+```bash
+git clone https://github.com/Matthew-Garay/72estados.git
+cd 72estados
 ```
 
-## Caracteristicas
+### Configuracion de variables de entorno
 
-- Representacion de grafos como lista de adyacencia
-- Busqueda en profundidad (DFS) con backtracking
-- Evitacion de ciclos en el recorrido
-- Codigo modular y documentado
+Este proyecto no requiere archivo .env ni variables de entorno. Todo el comportamiento se configura dentro del archivo fuente `laberinto72estados.pl`.
 
-## Como ejecutar
+### Comandos para ejecucion en entorno de Desarrollo
 
-### Requisitos previos
-
-- SWI-Prolog 8.x instalado
-
-### Ejecucion
-
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/Matthew-Garay/72estados.git
-   cd 72estados
-   ```
-2. Ejecuta el archivo principal con SWI-Prolog:
-   ```bash
-   swipl -s laberinto72estados.pl -g "main" -t "halt"
-   ```
-3. El programa muestra el camino encontrado entre los nodos especificados.
-
-## Estructura del proyecto
-
-```
-72estados/
-├── laberinto72estados.pl    # Codigo fuente en Prolog
-├── .gitignore               # Archivos excluidos del control de versiones
-├── LICENSE                  # Licencia MIT
-├── README.md                # Este archivo
-└── docs/                    # Documentacion extendida
-    ├── setup-guide.md       # Guia de instalacion
-    └── architecture.md      # Diagrama de arquitectura
+```bash
+swipl -s laberinto72estados.pl -g "main" -t "halt"
 ```
 
-## Contacto
+### Comandos para ejecucion en entorno de Produccion
 
-<p align="center">
-  <a href="mailto:1911.garay.perez@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-  <a href="https://www.linkedin.com/in/matthewgarayperez/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-</p>
+No aplica entorno de produccion separado; el programa se ejecuta localmente con el mismo comando de desarrollo.
+
+## F. Creditos de Autoría
+
+Desarrollado por: Matthew Ilveneff Garay Pérez
+Correo Electronico: 1911.garay.perez@gmail.com
